@@ -11,7 +11,7 @@ class Solution {
             }
         }
         
-        return list.toArray(list.toArray(new String[0]));    
+        return list.toArray(new String[0]);    
         
     }
 }
