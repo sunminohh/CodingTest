@@ -2,30 +2,25 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String myStr) {
+
+        List<String> result = new ArrayList<>();
         
-        List<String> answer = new ArrayList<>();
-        
-        StringBuilder sb = new StringBuilder();
+        StringBuilder current = new StringBuilder();
         for (char c : myStr.toCharArray()) {
             if (c == 'a' || c == 'b' || c == 'c') {
-                if (0 < sb.length()) {                    
-                    answer.add(sb.toString());
-                    sb = new StringBuilder();
+                if (current.length() > 0) {
+                    result.add(current.toString());
+                    current.setLength(0);
                 }
             } else {
-                sb.append(c);
+                current.append(c);
             }
         }
         
-        if (0 < sb.length()) {
-            answer.add(sb.toString());
+        if (current.length() > 0) {
+            result.add(current.toString());
         }
         
-        if (answer.isEmpty()) {
-            return new String[]{"EMPTY"};
-        } else {
-            return answer.toArray(new String[0]);
-        }
-        
+        return result.isEmpty() ? new String[]{"EMPTY"} : result.toArray(new String[0]);
     }
 }
