@@ -3,16 +3,11 @@ import java.util.Collections;
 
 class Solution {
     public String solution(String s) {
+  
+        char[] chArr = s.toCharArray();
+        Arrays.sort(chArr);
+        StringBuilder sb = new StringBuilder(String.valueOf(chArr));
         
-        String answer = "";
-        
-        String[] strArr = s.split("");
-        Arrays.sort(strArr, Collections.reverseOrder());
-        
-        for (String str : strArr) {
-            answer += str;
-        }
-        
-        return answer;
+        return sb.reverse().toString();
     }
 }
