@@ -12,8 +12,8 @@ class Solution {
             min = r;
         }
         
-        int gcd = n * m / max;
-        int[] answer = {max, gcd};
+        int lcm = n * m / max;
+        int[] answer = {max, lcm};
         
         return answer;
     }
